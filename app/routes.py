@@ -18,8 +18,10 @@ def results():
         color =(userdata['color'])
         URL = model.IkeaURLs(furniture, color)
         URL1 = model.MacysURLs(furniture, color)
+        URL2 = model.RaysURLs(furniture, color)
         print(URL)
         print(URL1)
+        print(URL2)
         print(userdata)
         error = model.options(room_type, furniture)
         print(error)
@@ -29,7 +31,7 @@ def results():
             
         # ikea = model.IkeaURLs(room_type, furniture, color, URL)
         # print(ikea)
-            return render_template('results.html', room_type = room_type, furniture = furniture, color = color, URL = URL, URL1 = URL1, error = error )
+            return render_template('results.html', room_type = room_type, furniture = furniture, color = color, URL = URL, URL1 = URL1, URL2 = URL2, error = error )
         
         
         
