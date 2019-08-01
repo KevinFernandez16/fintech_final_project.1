@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Read Only by HTML5 UP</title>
+	<title>Room Aestheticizer</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="/static/assets/css/main.css" />
@@ -21,7 +21,7 @@
 	<section id="header">
 		<header>
 			<span class="image avatar"><img src="/static/images/koala.jpg" alt="" /></span>
-			<h1 id="logo"><a href="#">Room Aestheticizer</a></h1>
+			<h1 id="logo"><a href="#">Welcome, {{ nameDisplay }} to the Room Aestheticizer!</a></h1>
 			<p>I am a website that will help you decorate your room.<br /></p>
 		</header>
 		<nav id="nav">
@@ -30,6 +30,7 @@
 				<li><a href="#two">Things I Can Do</a></li>
 				<li><a href="#three">A Few Accomplishments</a></li>
 				<li><a href="#four">Contact</a></li>
+				<li><a href="./logout">Log Out</a></li>
 			</ul>
 		</nav>
 		<footer>
@@ -65,6 +66,7 @@
 						<img class="mySlides" src="/static/images/pic1.jpg" style="width:100%">
 						<img class="mySlides" src="/static/images/pic2.jpg" style="width:100%">
 						<img class="mySlides" src="/static/images/pic4.jpg" style="width:100%">
+						<img class="mySlides" src="/static/images/pic5.jpg" style="width:100%">
 						<!--<img class="mySlides" src="/static/images/pic.jpg" style="width:100%">
 						<!--<img class="mySlides" src="/static/images/pic3.jpg" style="width:80.8%" "height:95%">-->
 
@@ -77,7 +79,7 @@
 					<!--</div>-->
 					<div class="container">
 						<header class="major">
-							<h2>Welcome to the Room Aestheticizer!</h2>
+							<h2><a>Welcome to the Room Aestheticizer {{name}}!</a></h2>
 						
 							<p><br>Just an incredibly simple site to customize your room!!<br /> </p>
 							<p>What room would you like to design today?</p>
