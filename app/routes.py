@@ -62,13 +62,15 @@ def signup():
             return 'That username already exists!  Try logging in.'
     nameDisplay = session['username']
     return render_template('signup.html', nameDisplay = nameDisplay)
-    
+
 @app.route('/login', methods=['GET','POST'])
 def login():
-    if 'username' not in session:
-        return render_template('login.html')
-   
-    elif request.method == 'POST':
+    return render_template('login.html')
+    
+    
+@app.route('/loginattempt', methods=['GET','POST'])
+def loginattempt():
+    if request.method == 'POST':
         users = mongo.db.users
         login_data = dict(request.form)
         login_user = users.find_one({'name' : login_data['username']})

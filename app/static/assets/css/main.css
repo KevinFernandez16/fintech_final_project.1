@@ -3314,3 +3314,12 @@ input, select, textarea {
 			}
 
 	}
+	
+div.login  {
+  padding-left:80px;
+  padding-top:20px;
+}
+div.signup  {
+  padding-left:80px;
+  padding-top:20px;
+}

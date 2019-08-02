@@ -1,0 +1,26 @@
+
+@app.route('/login', methods=['GET','POST'])
+def login():
+    return render_template('login.html')
+    
+    
+@app.route('/loginattempt', methods=['GET','POST'])
+def loginattempt():
+    if request.method == 'POST':
+        users = mongo.db.users
+        login_data = dict(request.form)
+        login_user = users.find_one({'name' : login_data['username']})
+        if login_user:
+            if login_data['password'] == login_user['password']:
+                session['username'] = login_data['username']
+                return redirect('/index')
+        return 'Invalid username/password combination'
+        
+    else:
+        nameDisplay = session['username']
+        return render_template('login.html', nameDisplay = nameDisplay)
+            
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/login')
